@@ -16,5 +16,4 @@ foreach (string sor in File.ReadAllLines("mutargy.txt").Skip(1))
         hibasSorokSzama++;
         continue;
     }
-    
 }
