@@ -11,9 +11,38 @@ foreach (string sor in File.ReadAllLines("mutargy.txt").Skip(1))
         continue;
     }
     string[] mezok = sor.Split("|");
-    if (mezok[0] != "M" && mezok[0] != "F")
+    if(mezok.Count() != 4)
     {
         hibasSorokSzama++;
         continue;
     }
+
+    string tipus = mezok[0].Trim().ToUpper();
+    if (tipus != "M" && tipus != "F")
+    {
+        hibasSorokSzama++;
+        continue;
+    }
+
+    if (string.IsNullOrWhiteSpace(mezok[1]))
+    {
+        hibasSorokSzama++;
+        continue;
+    }
+
+    if (!int.TryParse(mezok[2], out int ertek))
+    {
+        hibasSorokSzama++;
+        continue;
+    }
+
+    if (!int.TryParse(mezok[3], out int extra))
+    {
+        hibasSorokSzama++;
+        continue;
+    }
+
+    if(tipus == "M") mutargy.Add(new Mutargy(mezok[1].Trim(), ertek, extra));
+    else if (tipus == "F") mutargy.Add(new Festmeny(mezok[1].Trim(), ertek, extra, extra));
+    else mutargy.Add(new Mutargy(mezok[1].Trim(), ertek, extra));
 }
