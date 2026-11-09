@@ -4,9 +4,9 @@ using System.Text;
 
 namespace MuzeumApp
 {
-    internal class Festmeny : Mutargy
+    public class Festmeny : Mutargy
     {
-        int KorEvekben { get; set; }
+        public int KorEvekben { get; set; }
 
         public Festmeny(string azonosito, int becsultErtek, int osszesMutargySzama, int korEvekben) : base(azonosito, becsultErtek, osszesMutargySzama)
         {

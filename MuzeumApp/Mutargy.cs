@@ -5,9 +5,9 @@ using System.Text;
 
 namespace MuzeumApp
 {
-    internal class Mutargy
+    public class Mutargy
     {
-        string Azonosito { get; set; }
+        public string Azonosito { get; set; }
         protected int becsultErtek;
         public int BecsultErtek
         {
