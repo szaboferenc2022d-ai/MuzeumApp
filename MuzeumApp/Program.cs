@@ -77,7 +77,7 @@ foreach(Mutargy m in mutargy)
 }
 
 
+IEnumerable<string> kiir = mutargy.OrderByDescending(x => x.BecsultErtek).Select(x => $"- {x.Azonosito} ; {x.BecsultErtek} ; {x.BiztositasDij()} ");
+//var kiir = mutargy.OrderByDescending(x => x.BecsultErtek).Select(x => $"- {x.Azonosito} ; {x.BecsultErtek} ; {x.BiztositasDij()} ");
 
-
-Console.WriteLine("A riport.txt fájl sikeresen elkészült a kimeneti mappában.");
-Console.WriteLine($"Műtárgy példányok száma (static): 4 db");
+Console.WriteLine($"A riport.txt, {kiir}");
